@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Città di Notte - Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'night': '#1A1B2F',
+                        'city': '#FFB30F',
+                        'asphalt': '#2C3E50',
+                        'neon': '#4A90E2',
+                        'paper': '#F5F5F5',
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        .hover-glow {
+            transition: all 0.3s ease;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 15px rgba(74, 144, 226, 0.6);
+            transform: translateY(-2px);
+        }
+        .gradient-overlay {
+            background: linear-gradient(45deg, rgba(26,27,47,0.95), rgba(44,62,80,0.85));
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-night text-paper">
+    <!-- Hero Section -->
+    <section class="relative py-20 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between" data-aos="fade-up">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-shadow" data-aos="fade-right" data-aos-delay="200">
+                        Inizia il tuo viaggio in<br><span class="text-city">CITTÀ DI NOTTE</span>
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 leading-relaxed opacity-90" data-aos="fade-right" data-aos-delay="400">
+                        CITTÀ DI NOTTE è un intenso romanzo breve che vi porterà alla scoperta di una Napoli inedita
+                        e cupa, lontana dalle rappresentazioni da cartolina.<br><br>
+                        Seguirete il Rider, un giovane anonimo e precario, nei suoi viaggi notturni alla ricerca di
+                        un'ispirazione con cui scrivere il suo primo romanzo. Una odissea urbana fatta di fragilità
+                        umane e voglia di addentare la vita, fallimenti e rinascita.<br><br>
+                        La storia di un ragazzo come tanti, il ritratto di una generazione intera.
+                    </p>
+                    <button class="hover-glow bg-city text-night px-8 py-4 rounded-lg text-lg font-bold" data-aos="fade-up" data-aos-delay="600">
+                        Acquista la tua copia ora
+                    </button>
+                </div>
+                <div class="md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-delay="400">
+                    <img src="images/cover_def.jpg" alt="Copertina di Città di Notte" class="rounded-lg shadow-2xl max-w-sm"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Download Preview Box -->
+    <div class="container mx-auto px-6 -mt-16 relative z-10">
+        <div class="gradient-overlay rounded-lg shadow-xl p-8" data-aos="zoom-in">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2 text-city">Leggi il primo capitolo gratis!</h3>
+                    <p class="text-paper opacity-90">Scopri come inizia questa storia, con un semplice click</p>
+                </div>
+                <button class="hover-glow bg-neon text-night px-8 py-3 rounded-lg font-semibold">
+                    Scarica l'estratto
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Preview Section -->
+    <section class="py-24 bg-asphalt">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-city">Ascolta "Intro Città di Notte"</h2>
+                <p class="text-xl text-paper opacity-90">
+                    Intro Città di Notte è il brano ufficiale che introduce il romanzo e le sue tematiche.<br>
+                    L'autore Marco Santeusanio (sotto il suo alias da rapper CallMeStiano) e il
+                    cantautore Giuseppe Musella danno voce al rider protagonista di città di notte
+                    in un brano intenso e che colpisce dritto al cuore.
+                </p>
+            </div>
+            <div class="max-w-3xl mx-auto bg-night p-6 rounded-lg hover-glow" data-aos="zoom-in">
+                <div class="aspect-w-16 aspect-h-9">
+                    <img src="/api/placeholder/800/450" alt="Video Preview" class="rounded-lg w-full"/>
+                </div>
+                <button class="mt-6 bg-city text-night px-8 py-3 rounded-lg hover-glow mx-auto block font-bold">
+                    Ascoltalo in streaming
+                </button>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Purchase Box -->
+    <div class="container mx-auto px-6 mb-24">
+        <div class="gradient-overlay rounded-lg shadow-xl p-8" data-aos="zoom-in">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2 text-city">Acquista Città di Notte dal sito di PAV edizioni</h3>
+                    <p class="text-paper opacity-90">
+                        PAV EDIZIONI, la casa editrice che fa
+                        incontrare le nuove voci della letteratura
+                        italiana col proprio pubblico
+                    </p>
+                </div>
+                <button class="hover-glow bg-city text-night px-8 py-3 rounded-lg font-bold">
+                    Acquista ora
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Author Bio Section -->
+    <section class="bg-asphalt py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col items-center">
+                    <img src="images/author.JPG" alt="Foto dell'autore" 
+                         class="rounded-full mb-8 w-64 h-64 object-cover shadow-xl hover-glow" data-aos="zoom-in"/>
+                    
+                    <h2 class="text-3xl font-bold mb-6 text-city" data-aos="fade-up">L'Autore</h2>
+                    <p class="text-lg text-paper opacity-90 mb-8 text-center max-w-2xl" data-aos="fade-up">
+                        Marco Santeusanio scrive per esigenza dal 7 novembre 1995.<br><br>
+                        Autore pluripremiato in più concorsi letterari, ha pubblicato due raccolte di racconti, Demoni
+                        e Inferni, e il romanzo Città di Notte.<br><br>
+                        Appassionato di musica, scrive strofe sotto l'alias CallMeStiano
+                    </p>
+                    
+                    <div class="flex justify-center space-x-8 mb-8" data-aos="fade-up">
+                        <a href="#" class="text-neon hover:text-city transition-colors duration-300 text-lg">
+                            <img src="images/ig.webp" alt="Logo Instagram" class="w-8 h-8">
+                        </a>
+                        <a href="#" class="text-neon hover:text-city transition-colors duration-300 text-lg">
+                            <img src="images/fb.webp" alt="Logo Facebook" class="w-8 h-8"></a>
+                        <a href="#" class="text-neon hover:text-city transition-colors duration-300 text-lg">
+                            <img src="images/tiktok.svg" alt="Logo Instagram" class="w-8 h-8"></a>
+                    </div>
+
+                    <button class="hover-glow bg-city text-night px-8 py-4 rounded-lg text-lg font-bold" data-aos="fade-up">
+                        Scopri le pubblicazioni
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+        });
+    </script>
+</body>
+</html>

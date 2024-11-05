@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b63dbd8f-123d-43a6-85be-581fb02f6362/deploy-status)](https://app.netlify.com/sites/citta-di-notte-landing-page/deploys)
+
 # Città di Notte
 
 **Questa landing page è dedicata al lancio del libro "Città di Notte"**

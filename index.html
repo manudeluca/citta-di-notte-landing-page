@@ -37,14 +37,39 @@
         .text-shadow {
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
+        .scroll-indicator {
+            transition: opacity 0.3s ease;
+        }
     </style>
 </head>
 <body class="bg-night text-paper">
     <!-- Hero Section -->
     <section class="relative py-20 overflow-hidden">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center justify-between" data-aos="fade-up">
-                <div class="md:w-1/2 mb-12 md:mb-0">
+            <!-- Mobile Layout (Image on top) -->
+            <div class="md:hidden flex flex-col items-center relative">
+                <div class="w-full flex justify-center mb-8" data-aos="fade-down">
+                    <img src="images/cover_def.jpg" alt="Copertina di Città di Notte"
+                         class="rounded-lg shadow-2xl max-w-sm w-full"/>
+                </div>
+
+                <!-- Scroll Indicator Button -->
+                <button
+                        onclick="scrollToContent()"
+                        class="absolute -bottom-8 left-1/2 -translate-x-1/2 animate-bounce p-4 cursor-pointer z-10
+                       hover:scale-110 transition-transform duration-300"
+                        aria-label="Scorri al contenuto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                         stroke="#FFB30F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Content Layout (Different for Mobile and Desktop) -->
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <!-- Text Content -->
+                <div id="hero-content" class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-up">
                     <h1 class="text-4xl md:text-5xl font-bold mb-6 text-shadow" data-aos="fade-right" data-aos-delay="200">
                         Inizia il tuo viaggio in<br><span class="text-city">CITTÀ DI NOTTE</span>
                     </h1>
@@ -56,27 +81,35 @@
                         umane e voglia di addentare la vita, fallimenti e rinascita.<br><br>
                         La storia di un ragazzo come tanti, il ritratto di una generazione intera.
                     </p>
-                    <button class="hover-glow bg-city text-night px-8 py-4 rounded-lg text-lg font-bold" data-aos="fade-up" data-aos-delay="600">
+                    <button class="hover-glow bg-city text-night px-8 py-4 rounded-lg text-lg font-bold"
+                            data-aos="fade-up" data-aos-delay="600">
                         Acquista la tua copia ora
                     </button>
                 </div>
-                <div class="md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-delay="400">
-                    <img src="images/cover_def.jpg" alt="Copertina di Città di Notte" class="rounded-lg shadow-2xl max-w-sm"/>
+
+                <!-- Desktop Image (hidden on mobile) -->
+                <div class="hidden md:flex md:w-1/2 justify-center" data-aos="fade-left" data-aos-delay="400">
+                    <img src="images/cover_def.jpg" alt="Copertina di Città di Notte"
+                         class="rounded-lg shadow-2xl max-w-sm"/>
                 </div>
             </div>
         </div>
     </section>
 
-    
-    <!-- Download Preview Box -->
-    <div class="container mx-auto px-6 -mt-16 relative z-10">
-        <div class="gradient-overlay rounded-lg shadow-xl p-8" data-aos="zoom-in">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-2xl font-bold mb-2 text-city">Leggi il primo capitolo gratis!</h3>
-                    <p class="text-paper opacity-90">Scopri come inizia questa storia, con un semplice click</p>
+    <div class="container mx-auto px-4 sm:px-6 -mt-16 relative z-10">
+        <div class="bg-night border-2 border-city rounded-xl shadow-2xl p-8 hover:shadow-[0_0_25px_rgba(255,179,15,0.3)] transition-all duration-300"
+             data-aos="zoom-in">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-center md:text-left">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-3 text-city">
+                        Leggi il primo capitolo gratis!
+                    </h3>
+                    <p class="text-paper text-lg opacity-90">
+                        Scopri come inizia questa storia, con un semplice click
+                    </p>
                 </div>
-                <button class="hover-glow bg-neon text-night px-8 py-3 rounded-lg font-semibold">
+                <button class="w-full md:w-auto hover-glow bg-neon text-night px-8 py-4 rounded-lg font-bold text-lg
+                         transition-all duration-300 hover:scale-105">
                     Scarica l'estratto
                 </button>
             </div>
@@ -88,40 +121,66 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-city">Ascolta "Intro Città di Notte"</h2>
-                <p class="text-xl text-paper opacity-90">
+                <p class="text-xl text-paper opacity-90 max-w-3xl mx-auto">
                     Intro Città di Notte è il brano ufficiale che introduce il romanzo e le sue tematiche.<br>
                     L'autore Marco Santeusanio (sotto il suo alias da rapper CallMeStiano) e il
                     cantautore Giuseppe Musella danno voce al rider protagonista di città di notte
                     in un brano intenso e che colpisce dritto al cuore.
                 </p>
             </div>
-            <div class="max-w-3xl mx-auto bg-night p-6 rounded-lg hover-glow" data-aos="zoom-in">
-                <div class="aspect-w-16 aspect-h-9">
-                    <img src="/api/placeholder/800/450" alt="Video Preview" class="rounded-lg w-full"/>
+
+            <div class="max-w-4xl mx-auto" data-aos="zoom-in">
+                <!-- Image Container with Enhanced Styling -->
+                <div class="relative overflow-hidden rounded-xl shadow-2xl hover:shadow-[0_0_30px_rgba(255,179,15,0.3)] transition-all duration-300">
+                    <img
+                            src="images/intro-cover.jpg"
+                            alt="Intro Città di Notte - Cover"
+                            class="w-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+
+                    <!-- Overlay with Gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                        <!-- Play Button Container -->
+                        <button class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-city text-night px-8 py-4 rounded-lg
+                                 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl
+                                 flex items-center gap-3 font-bold group">
+                            <!-- Play Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="currentColor" class="group-hover:translate-x-1 transition-transform duration-300">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            Ascoltalo in streaming
+                        </button>
+                    </div>
                 </div>
-                <button class="mt-6 bg-city text-night px-8 py-3 rounded-lg hover-glow mx-auto block font-bold">
-                    Ascoltalo in streaming
-                </button>
             </div>
         </div>
     </section>
 
     
     <!-- Purchase Box -->
-    <div class="container mx-auto px-6 mb-24">
-        <div class="gradient-overlay rounded-lg shadow-xl p-8" data-aos="zoom-in">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-2xl font-bold mb-2 text-city">Acquista Città di Notte dal sito di PAV edizioni</h3>
-                    <p class="text-paper opacity-90">
-                        PAV EDIZIONI, la casa editrice che fa
-                        incontrare le nuove voci della letteratura
-                        italiana col proprio pubblico
+    <div class="container mx-auto px-4 sm:px-6 my-24">
+        <div class="bg-night border-2 border-city rounded-xl shadow-2xl p-8 hover:shadow-[0_0_25px_rgba(255,179,15,0.3)] transition-all duration-300"
+             data-aos="zoom-in">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-center md:text-left">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-3 text-city">
+                        Acquista Città di Notte da PAV edizioni
+                    </h3>
+                    <p class="text-paper text-lg opacity-90 max-w-xl">
+                        PAV EDIZIONI, la casa editrice che fa incontrare le nuove voci
+                        della letteratura italiana col proprio pubblico
                     </p>
                 </div>
-                <button class="hover-glow bg-city text-night px-8 py-3 rounded-lg font-bold">
+                <a
+                        href="https://pavedizioni.it/prodotto/citta-di-notte"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="w-full md:w-auto hover-glow bg-city text-night px-8 py-4 rounded-lg font-bold text-lg
+                       transition-all duration-300 hover:scale-105 text-center"
+                >
                     Acquista ora
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -161,12 +220,34 @@
     </section>
 
     <script>
+        function scrollToContent() {
+            const contentElement = document.getElementById('hero-content');
+            const offset = contentElement.offsetTop - 20; // Adding some padding
+
+            window.scrollTo({
+                top: offset,
+                behavior: 'smooth'
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
+            const scrollButton = document.querySelector('.animate-bounce');
+
             AOS.init({
                 duration: 1000,
                 easing: 'ease-in-out',
                 once: true,
                 mirror: false
+            });
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    scrollButton.style.opacity = '0';
+                    scrollButton.style.pointerEvents = 'none';
+                } else {
+                    scrollButton.style.opacity = '1';
+                    scrollButton.style.pointerEvents = 'auto';
+                }
             });
         });
     </script>
